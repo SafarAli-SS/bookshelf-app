@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "",
+    "public": "dist/Bookshelf",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
