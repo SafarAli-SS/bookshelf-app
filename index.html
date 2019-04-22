@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
+    <title>Bookshelf app</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: url("book-read-shelf-furniture-bookshelf-bookcase-1256031-pxhere.com.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5 bg-light rounded-lg">
+      <h1 class="text-primary text-center p-3">My Library</h1>
+      <form class="form">
+        <div class="form-row">
+          <div class="col-sm-5">
+            <input
+              type="text"
+              class="form-control"
+              name="title"
+              id="book-title"
+              placeholder="title"
+            />
+          </div>
+          <div class="col-sm-5">
+            <input
+              type="text"
+              class="form-control"
+              name="author"
+              id="book-author"
+              placeholder="author"
+            />
+          </div>
+          <div class="col-sm-2">
+            <button type="submit" class="btn btn-dark">
+              Add Book
+            </button>
+          </div>
+        </div>
+      </form>
+      <p class="font-weight-bold bg-danger  text-white text-center mt-3 p-1">
+        If you misspelt something, simply correct that text in place and click
+        UPDATE button.
+      </p>
+      <table class="table table-striped table-hover mt-4 mb-5">
+        <thead class="thead-dark">
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="book-list"></tbody>
+      </table>
+    </div>
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyASWB5QTRt5XaFVP7bXKIUUKbrFwyLi7JY",
+        authDomain: "bookshelf-crud-app.firebaseapp.com",
+        databaseURL: "https://bookshelf-crud-app.firebaseio.com",
+        projectId: "bookshelf-crud-app",
+        storageBucket: "bookshelf-crud-app.appspot.com",
+        messagingSenderId: "159862811297"
+      };
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
